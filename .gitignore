@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+
+# Project specific
+data/
+checkpoint/
+hadoop/
+java_home/
+*.dll
+*.exe
+
+# Windows
+run.bat
+check_env.py
+check_hadoop_version.py
+setup_hadoop.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Streamlit
+.streamlit/
+
+# Logs
+*.log
