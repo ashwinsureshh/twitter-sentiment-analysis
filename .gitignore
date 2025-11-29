@@ -1,35 +1,30 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Data files
+data/
+*.csv
+
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-env/
-venv/
-*.egg-info/
 
-# Project specific
-data/
-checkpoint/
-hadoop/
-java_home/
-*.dll
-*.exe
+# Jupyter Notebook
+.ipynb_checkpoints
 
-# Windows
-run.bat
-check_env.py
-check_hadoop_version.py
-setup_hadoop.py
+# macOS
+.DS_Store
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# Streamlit
-.streamlit/
 
 # Logs
 *.log

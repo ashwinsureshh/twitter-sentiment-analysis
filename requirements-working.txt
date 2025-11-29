@@ -1,0 +1,17 @@
+# Working Requirements for Twitter Sentiment Analysis
+# Verified on macOS with Python 3.14
+
+# Core dependencies
+pandas==2.3.3
+textblob==0.19.0
+streamlit==1.51.0
+
+# PyArrow (use pre-built wheel, no cmake needed)
+pyarrow==22.0.0
+
+# Altair (Python 3.14 compatible)
+altair==6.0.0
+
+# Note: Version warnings can be ignored - all packages work correctly
+pyspark
+

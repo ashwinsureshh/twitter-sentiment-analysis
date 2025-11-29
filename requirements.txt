@@ -1,5 +1,0 @@
-pyspark
-textblob
-streamlit
-pandas
-watchdog

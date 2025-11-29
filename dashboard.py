@@ -8,7 +8,7 @@ st.set_page_config(page_title="Real-Time Twitter Sentiment", layout="wide")
 
 st.title("🐦 Real-Time Twitter Sentiment Analysis")
 
-DATA_DIR = "c:/Users/Gaming PC/BDA Project/data"
+DATA_DIR = "data"
 
 def load_data():
     csv_path = os.path.join(DATA_DIR, "tweets.csv")
@@ -16,7 +16,6 @@ def load_data():
         return pd.DataFrame(columns=["text", "timestamp", "topic", "sentiment"])
     
     try:
-        # Read the single CSV file
         df = pd.read_csv(csv_path)
         return df
     except pd.errors.EmptyDataError:
@@ -28,7 +27,6 @@ while True:
     df = load_data()
     
     with placeholder.container():
-        # Metrics
         total_tweets = len(df)
         positive_count = len(df[df['sentiment'] == 'Positive'])
         negative_count = len(df[df['sentiment'] == 'Negative'])
@@ -40,7 +38,6 @@ while True:
         kpi3.metric(label="Negative", value=negative_count)
         kpi4.metric(label="Neutral", value=neutral_count)
         
-        # Charts
         col1, col2 = st.columns(2)
         
         with col1:
