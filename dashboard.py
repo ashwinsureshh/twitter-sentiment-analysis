@@ -6,7 +6,7 @@ import glob
 
 st.set_page_config(page_title="Real-Time Twitter Sentiment", layout="wide")
 
-st.title("🐦 Real-Time Twitter Sentiment Analysis")
+st.title("Real-Time Twitter Sentiment Analysis")
 
 DATA_DIR = "data"
 
