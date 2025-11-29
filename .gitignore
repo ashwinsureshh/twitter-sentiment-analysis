@@ -5,7 +5,7 @@ ENV/
 
 # Data files
 data/
-*.csv
+# *.csv  # Commented out to allow dataset via Git LFS
 
 # Python
 __pycache__/
