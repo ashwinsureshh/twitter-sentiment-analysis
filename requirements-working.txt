@@ -16,3 +16,5 @@ altair==6.0.0
 pyspark
 
 plotly>=5.0.0
+wordcloud>=1.9.0
+matplotlib>=3.7.0
