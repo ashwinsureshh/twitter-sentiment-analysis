@@ -15,3 +15,4 @@ altair==6.0.0
 # Note: Version warnings can be ignored - all packages work correctly
 pyspark
 
+plotly>=5.0.0
