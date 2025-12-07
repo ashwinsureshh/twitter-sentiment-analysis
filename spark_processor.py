@@ -55,31 +55,10 @@ def process_stream():
                 row['sentiment']
             ))
             
-            header_rdd = sc.parallelize([("text", "timestamp", "topic", "sentiment")])
-            
-            if not os.path.exists("data/tweets.csv"):
-                combined_rdd = header_rdd.union(processed_rdd)
-                combined_rdd.coalesce(1).saveAsTextFile("data/temp_output")
-                
-                temp_file = None
-                for file in os.listdir("data/temp_output"):
-                    if file.startswith("part-"):
-                        temp_file = os.path.join("data/temp_output", file)
-                        break
-                
-                if temp_file:
-                    with open(temp_file, 'r') as f:
-                        content = f.read()
-                    
-                    formatted_content = content.replace("('", "").replace("')", "").replace("', '", ",")
-                    
-                    with open("data/tweets.csv", 'w') as f:
-                        f.write(formatted_content)
-                    
-                    shutil.rmtree("data/temp_output")
-            else:
-                pdf = batch_df.toPandas()
-                pdf.to_csv("data/tweets.csv", mode='a', header=False, index=False)
+            pdf = batch_df.toPandas()
+            mode = 'a' if os.path.exists("data/tweets.csv") else 'w'
+            header = False if mode == 'a' else True
+            pdf.to_csv("data/tweets.csv", mode=mode, header=header, index=False)
 
     if not os.path.exists("data"):
         os.makedirs("data")
