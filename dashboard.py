@@ -166,7 +166,7 @@ while True:
                         font=dict(color='white')
                     )
                     
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, use_container_width=True, key="sentiment_pie_chart")
                 else:
                     st.info("⏳ Waiting for data stream...")
 
@@ -257,7 +257,7 @@ while True:
                     yaxis=dict(showgrid=True, gridcolor='#333333')
                 )
                 
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, use_container_width=True, key="sentiment_trend_chart")
             else:
                 st.info("⏳ Waiting for time-series data...")
         
@@ -288,7 +288,7 @@ while True:
                         yaxis=dict(showgrid=False)
                     )
                     
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, use_container_width=True, key="top_topics_bar_chart")
                 
                 with col2:
                     st.markdown("### Topic Sentiment Breakdown")
@@ -319,7 +319,7 @@ while True:
                         yaxis=dict(showgrid=True, gridcolor='#333333')
                     )
                     
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, use_container_width=True, key="topic_sentiment_stacked_chart")
             else:
                 st.info("⏳ Waiting for topic data...")
 
