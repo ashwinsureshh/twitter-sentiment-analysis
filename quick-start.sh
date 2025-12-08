@@ -8,10 +8,13 @@ echo ""
 
 # Kill any existing processes
 echo "Cleaning up existing processes..."
+pkill -9 -f "tweet_producer.py" 2>/dev/null
+pkill -9 -f "spark_processor.py" 2>/dev/null
+pkill -9 -f "streamlit run dashboard.py" 2>/dev/null
 lsof -ti:9999 | xargs kill -9 2>/dev/null
-pkill -f "streamlit run dashboard.py" 2>/dev/null
-pkill -f "python_processor.py" 2>/dev/null
-sleep 1
+lsof -ti:8501 | xargs kill -9 2>/dev/null
+sleep 2
+
 
 # Clean data directory to start fresh
 echo "Resetting data (starting from 0 tweets)..."
